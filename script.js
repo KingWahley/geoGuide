@@ -1,12 +1,15 @@
+// 'catching the dom'
 let searchBtn = document.getElementById("search-btn");
 let country = document.getElementById("user-inp");
 let loader = document.querySelector(".loader");
 
+// 'after getting data from api'
 const afterLoad = () => {
   loader.style.opacity = 1;
   country.value = "";
   searchBtn.classList.add("btndisplay");
 };
+("catch errors");
 const err = () => {
   if (!data) {
     alert("wrong input, check spelling. No countries found");
@@ -25,6 +28,8 @@ const err = () => {
 // }
 
 let data;
+
+// 'get data from api'
 const load = () => {
   loader.style.opacity = 1;
   let countryName = country.value;
@@ -33,6 +38,7 @@ const load = () => {
   fetch(finalURL)
     .then((response) => response.json())
     .then((data) => {
+      // 'render data to html'
       result.innerHTML = `
       <div class="flags">
         <div class="coats">
@@ -85,7 +91,7 @@ const load = () => {
       afterLoad();
       loader.style.opacity = 0;
     })
-
+    // 'catch errors'
     .catch(() => {
       err();
     });

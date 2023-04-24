@@ -62,7 +62,8 @@ body {
 .flagTitle {
   font-size: 0.8rem;
   text-align: center;
-  color: #5d6274;
+  color: #222a43;
+  font-weight: bolder;
 }
 .coats {
   display: flex;
